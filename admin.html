@@ -2,174 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Islamic Legacy — Seller</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-    font-family:Arial, sans-serif;
-    background:#f5f7f6;
-    color:#233c35;
-}
-
-.app{
-    display:flex;
-    min-height:100vh;
-}
-
-.sidebar{
-    width:240px;
-    background:#0d3027;
-    color:white;
-    padding:25px 15px;
-}
-
-.logo{
-    font-family:Georgia,serif;
-    font-size:24px;
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.nav button{
-    width:100%;
-    padding:14px;
-    margin:4px 0;
-    border:0;
-    border-radius:10px;
-    background:transparent;
-    color:white;
-    text-align:left;
-    cursor:pointer;
-    font-size:15px;
-}
-
-.nav button:hover,
-.nav button.active{
-    background:#174f40;
-}
-
-.main{
-    flex:1;
-    padding:30px;
-}
-
-.page{
-    display:none;
-}
-
-.page.active{
-    display:block;
-}
-
-h1{
-    color:#174f40;
-    margin-bottom:25px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.07);
-}
-
-.card h3{
-    color:#174f40;
-    margin-bottom:10px;
-}
-
-.big{
-    font-size:30px;
-    font-weight:bold;
-}
-
-.form{
-    max-width:800px;
-}
-
-label{
-    display:block;
-    font-weight:bold;
-    margin:18px 0 7px;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    padding:13px;
-    border:1px solid #dce5e0;
-    border-radius:10px;
-    font-size:14px;
-}
-
-textarea{
-    min-height:130px;
-}
-
-.file{
-    padding:12px;
-    background:#f3f7f5;
-}
-
-.preview{
-    margin-top:15px;
-    max-width:350px;
-    border-radius:15px;
-    display:none;
-}
-
-.save{
-    margin-top:20px;
-    padding:14px 25px;
-    border:0;
-    border-radius:25px;
-    background:#174f40;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.save:hover{
-    background:#0d3027;
-}
-
-.product-box{
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:20px;
-    align-items:center;
-}
-
-.product-box img{
-    width:220px;
-    height:180px;
-    object-fit:cover;
-    border-radius:15px;
-    background:#eee;
-}
-
-@media(max-width:800px){
-    .sidebar{width:190px}
-    .cards{grid-template-columns:1fr}
-    .product-box{grid-template-columns:1fr}
-}
-
-@media(max-width:600px){
-    .app{display:block}
-    .sidebar{width:100%}
-    .main{padding:18px}
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f4f7f5;color:#203b33}
+.app{display:flex;min-height:100vh}
+.sidebar{width:240px;background:#10372d;color:white;padding:25px 14px}
+.logo{text-align:center;font-size:23px;font-weight:bold;margin-bottom:30px}
+.nav button{width:100%;padding:14px;margin:4px 0;border:0;border-radius:10px;background:transparent;color:white;text-align:left;cursor:pointer;font-size:15px}
+.nav button:hover,.nav button.active{background:#1b5948}
+.main{flex:1;padding:30px}
+.page{display:none}
+.page.active{display:block}
+h1{color:#174f40}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;padding:22px;border-radius:16px;box-shadow:0 7px 25px #0001;margin-bottom:18px}
+.big{font-size:30px;font-weight:bold}
+label{display:block;font-weight:bold;margin:15px 0 6px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:9px}
+textarea{height:120px}
+button.save{margin-top:18px;background:#174f40;color:white;border:0;padding:13px 22px;border-radius:22px;cursor:pointer}
+.file{background:#f4f7f5}
+.preview{max-width:300px;max-height:250px;margin-top:12px;border-radius:12px;display:none}
+.product{display:flex;gap:20px;align-items:center}
+.product img{width:160px;height:130px;object-fit:cover;border-radius:12px}
+.delete{background:#c0392b;color:white;border:0;padding:9px 15px;border-radius:8px;cursor:pointer;margin-top:10px}
+@media(max-width:700px){.app{display:block}.sidebar{width:auto}.cards{grid-template-columns:1fr}.main{padding:18px}.product{display:block}}
 </style>
 </head>
 
@@ -178,436 +38,208 @@ textarea{
 <div class="app">
 
 <aside class="sidebar">
-
-<div class="logo">
-Islamic Legacy
-</div>
+<div class="logo">Islamic Legacy</div>
 
 <div class="nav">
-
-<button onclick="openPage('dashboard')">
-🏠 Dashboard
-</button>
-
-<button onclick="openPage('products')">
-🛍️ Products
-</button>
-
-<button onclick="openPage('add')">
-➕ Add Product
-</button>
-
-<button onclick="openPage('orders')">
-📦 Orders
-</button>
-
-<button onclick="openPage('vouchers')">
-🎟️ Vouchers
-</button>
-
-<button onclick="openPage('banners')">
-🖼️ Banners
-</button>
-
-<button onclick="openPage('contact')">
-📞 Contact
-</button>
-
-<button onclick="openPage('settings')">
-⚙️ Settings
-</button>
-
+<button onclick="openPage('dashboard')">🏠 Dashboard</button>
+<button onclick="openPage('products')">🛍️ Products</button>
+<button onclick="openPage('add')">➕ Add Product</button>
+<button onclick="openPage('orders')">📦 Orders</button>
+<button onclick="openPage('vouchers')">🎟️ Vouchers</button>
+<button onclick="openPage('banners')">🖼️ Banners</button>
+<button onclick="openPage('contact')">📞 Contact</button>
+<button onclick="openPage('settings')">⚙️ Settings</button>
 </div>
-
 </aside>
-
 
 <main class="main">
 
-
-<!-- DASHBOARD -->
-
 <section id="dashboard" class="page active">
-
 <h1>Dashboard</h1>
-
 <div class="cards">
-
-<div class="card">
-<h3>Products</h3>
-<div class="big" id="productCount">0</div>
+<div class="card"><b>Products</b><div class="big" id="count">0</div></div>
+<div class="card"><b>Orders</b><div class="big">0</div></div>
+<div class="card"><b>Sales</b><div class="big">Rs. 0</div></div>
 </div>
-
-<div class="card">
-<h3>Orders</h3>
-<div class="big">0</div>
-</div>
-
-<div class="card">
-<h3>Sales</h3>
-<div class="big">Rs. 0</div>
-</div>
-
-</div>
-
 </section>
-
-
-<!-- PRODUCTS -->
 
 <section id="products" class="page">
-
 <h1>Products</h1>
-
-<div id="productList"></div>
-
+<div id="productsList"></div>
 </section>
 
-
-<!-- ADD PRODUCT -->
-
 <section id="add" class="page">
-
 <h1>Add Product</h1>
 
-<div class="card form">
+<div class="card">
 
 <label>Product Name</label>
-<input id="name" placeholder="Hajj Banner">
+<input id="name" placeholder="Product name">
 
-<label>Price (Rs.)</label>
+<label>Price</label>
 <input id="price" type="number" placeholder="599">
 
 <label>Product Image</label>
-<input
-id="image"
-class="file"
-type="file"
-accept="image/*"
-onchange="previewImage(event)"
->
+<input id="image" class="file" type="file" accept="image/*" onchange="preview()">
 
-<img id="imagePreview" class="preview">
+<img id="imgPreview" class="preview">
 
 <label>Product Video</label>
-<input
-id="video"
-class="file"
-type="file"
-accept="video/*"
->
+<input id="video" class="file" type="file" accept="video/*">
 
 <label>Description</label>
-<textarea
-id="description"
-placeholder="Write product description..."
-></textarea>
+<textarea id="description" placeholder="Product description"></textarea>
 
-<button class="save" onclick="saveProduct()">
-💾 Save Product
-</button>
+<button class="save" onclick="addProduct()">💾 Save Product</button>
 
-<p id="status"></p>
+<p id="message"></p>
 
 </div>
-
 </section>
-
-
-<!-- ORDERS -->
 
 <section id="orders" class="page">
-
 <h1>Orders</h1>
-
-<div class="card">
-
-<p>No orders yet.</p>
-
-</div>
-
+<div class="card">📦 No orders yet.</div>
 </section>
-
-
-<!-- VOUCHERS -->
 
 <section id="vouchers" class="page">
-
 <h1>Vouchers</h1>
-
-<div class="card form">
-
+<div class="card">
 <label>Voucher Code</label>
 <input placeholder="ISLAMIC10">
-
-<label>Discount (%)</label>
+<label>Discount %</label>
 <input type="number" placeholder="10">
-
-<button class="save">
-💾 Save Voucher
-</button>
-
+<button class="save">💾 Save Voucher</button>
 </div>
-
 </section>
-
-
-<!-- BANNERS -->
 
 <section id="banners" class="page">
-
-<h1>Homepage Banners</h1>
-
-<div class="card form">
-
+<h1>Banners / Slider</h1>
+<div class="card">
 <label>Banner Image</label>
-
-<input
-class="file"
-type="file"
-accept="image/*"
->
-
+<input type="file" accept="image/*">
 <label>Banner Heading</label>
-
-<input placeholder="Beautiful Islamic Collection">
-
-<button class="save">
-💾 Save Banner
-</button>
-
+<input placeholder="Islamic Legacy Collection">
+<button class="save">💾 Save Banner</button>
 </div>
-
 </section>
-
-
-<!-- CONTACT -->
 
 <section id="contact" class="page">
-
 <h1>Contact Us</h1>
-
-<div class="card form">
-
+<div class="card">
 <label>Contact Number</label>
-
-<input
-id="contactNumber"
-value="03030403968"
->
-
-<button class="save" onclick="saveContact()">
-💾 Save Contact
-</button>
-
-<p id="contactStatus"></p>
-
+<input id="contact" value="03030403968">
+<button class="save">💾 Save Contact</button>
 </div>
-
 </section>
-
-
-<!-- SETTINGS -->
 
 <section id="settings" class="page">
-
-<h1>Store Settings</h1>
-
-<div class="card form">
-
+<h1>Settings</h1>
+<div class="card">
 <label>Store Name</label>
-
 <input value="Islamic Legacy">
-
 <label>Currency</label>
-
-<select>
-<option>PKR — Rs.</option>
-</select>
-
-<button class="save">
-💾 Save Settings
-</button>
-
+<select><option>PKR (Rs.)</option></select>
+<button class="save">💾 Save Settings</button>
 </div>
-
 </section>
 
-
 </main>
-
 </div>
-
 
 <script>
 
-let products =
-JSON.parse(localStorage.getItem("islamicProducts") || "[]");
-
+let products=JSON.parse(localStorage.getItem("products")||"[]");
 
 function openPage(page){
-
-document.querySelectorAll(".page")
-.forEach(p => p.classList.remove("active"));
-
-document.getElementById(page)
-.classList.add("active");
-
-if(page === "products"){
-renderProducts();
+document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+document.getElementById(page).classList.add("active");
+if(page==="products")showProducts();
 }
 
+function preview(){
+let file=document.getElementById("image").files[0];
+if(!file)return;
+let img=document.getElementById("imgPreview");
+img.src=URL.createObjectURL(file);
+img.style.display="block";
 }
 
+function addProduct(){
 
-function previewImage(event){
+let name=document.getElementById("name").value;
+let price=document.getElementById("price").value;
+let description=document.getElementById("description").value;
+let file=document.getElementById("image").files[0];
 
-const file = event.target.files[0];
-
-if(!file) return;
-
-const image =
-document.getElementById("imagePreview");
-
-image.src =
-URL.createObjectURL(file);
-
-image.style.display = "block";
-
-}
-
-
-function saveProduct(){
-
-const name =
-document.getElementById("name").value;
-
-const price =
-document.getElementById("price").value;
-
-const description =
-document.getElementById("description").value;
-
-const imageFile =
-document.getElementById("image").files[0];
-
-if(!name || !price){
-
-alert("Product name and price are required.");
-
+if(!name||!price){
+alert("Product name and price required");
 return;
-
 }
 
-const product = {
-
-id: Date.now(),
-
+let product={
+id:Date.now(),
 name:name,
-
 price:price,
-
 description:description,
-
-image:imageFile
-? URL.createObjectURL(imageFile)
-:null
-
+image:file?URL.createObjectURL(file):""
 };
 
 products.push(product);
+localStorage.setItem("products",JSON.stringify(products));
 
-localStorage.setItem(
-"islamicProducts",
-JSON.stringify(products)
-);
-
-document.getElementById("status").textContent =
-"✅ Product added successfully!";
-
-document.getElementById("name").value="";
-document.getElementById("price").value="";
-document.getElementById("description").value="";
-
-document.getElementById("image").value="";
-
-document.getElementById("imagePreview").style.display="none";
-
-updateCount();
+document.getElementById("message").textContent="✅ Product added!";
+document.getElementById("count").textContent=products.length;
 
 }
 
+function showProducts(){
 
-function renderProducts(){
-
-const list =
-document.getElementById("productList");
-
+let list=document.getElementById("productsList");
 list.innerHTML="";
 
-if(products.length === 0){
-
-list.innerHTML =
-'<div class="card">No products added yet.</div>';
-
+if(products.length===0){
+list.innerHTML='<div class="card">No products yet.</div>';
 return;
-
 }
 
-products.forEach(product=>{
+products.forEach(p=>{
 
-const box =
-document.createElement("div");
+let div=document.createElement("div");
+div.className="card";
 
-box.className="card";
-
-box.style.marginBottom="15px";
-
-box.innerHTML=`
-
-<div class="product-box">
-
-<img src="${product.image || ''}">
-
+div.innerHTML=`
+<div class="product">
+<img src="${p.image}">
 <div>
-
-<h2>${product.name}</h2>
-
-<p>${product.description || ""}</p>
-
-<h3>Rs. ${product.price}</h3>
-
+<h2>${p.name}</h2>
+<p>${p.description}</p>
+<h3>Rs. ${p.price}</h3>
+<button class="delete" onclick="deleteProduct(${p.id})">🗑️ Delete</button>
 </div>
-
 </div>
-
 `;
 
-list.appendChild(box);
+list.appendChild(div);
 
 });
+}
+
+function deleteProduct(id){
+
+if(!confirm("Delete this product?"))return;
+
+products=products.filter(p=>p.id!==id);
+
+localStorage.setItem("products",JSON.stringify(products));
+
+document.getElementById("count").textContent=products.length;
+
+showProducts();
 
 }
 
-
-function updateCount(){
-
-document.getElementById("productCount")
-.textContent=products.length;
-
-}
-
-
-function saveContact(){
-
-document.getElementById("contactStatus")
-.textContent=
-"✅ Contact number saved.";
-
-}
-
-
-updateCount();
+document.getElementById("count").textContent=products.length;
 
 </script>
 
