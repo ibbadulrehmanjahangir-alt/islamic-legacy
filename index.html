@@ -2,1007 +2,893 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Islamic Legacy | Timeless • Meaningful • Elegant</title>
 
 <style>
 
-/* =====================================================
-   GLOBAL
-===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--green:#174F40;
+--dark-green:#0D3027;
+--gold:#B89445;
+--soft-gold:#D6BC7A;
+--cream:#FBFAF6;
+--light-green:#F3F7F5;
+--text:#233C35;
+--muted:#718079;
+--border:#E7ECE9;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:white;
+color:var(--text);
 }
 
-:root {
-    --green: #174F40;
-    --dark-green: #0D3027;
-    --gold: #B89445;
-    --soft-gold: #D6BC7A;
-    --cream: #FBFAF6;
-    --light-green: #F3F7F5;
-    --text: #233C35;
-    --muted: #718079;
-    --border: #E7ECE9;
-}
+button,a{
+font-family:inherit;
+}
 
-html {
-    scroll-behavior: smooth;
-}
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: white;
-    color: var(--text);
-}
+/* =========================
+NAVBAR
+========================= */
 
-button,
-a {
-    font-family: inherit;
+nav{
+height:92px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 6%;
+background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(12px);
 }
-
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-nav {
-    height: 92px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    padding: 0 6%;
-
-    background: rgba(255,255,255,0.97);
-
-    border-bottom: 1px solid var(--border);
-
-    position: sticky;
-    top: 0;
-
-    z-index: 1000;
-
-    backdrop-filter: blur(12px);
+.nav-logo{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
 }
-
-
-/* NAV LOGO */
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
 
-    text-decoration: none;
+.nav-emblem{
+width:52px;
+height:52px;
+border-radius:50%;
+border:1.5px solid var(--green);
+box-shadow:
+0 0 0 3px white,
+0 0 0 4px var(--gold);
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+background:white;
 }
 
-
-/* SMALL CIRCLE EMBLEM */
-
-.nav-emblem {
-    width: 52px;
-    height: 52px;
-
-    border-radius: 50%;
-
-    border: 1.5px solid var(--green);
-
-    box-shadow:
-        0 0 0 3px white,
-        0 0 0 4px var(--gold);
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: white;
+.nav-emblem:before{
+content:"";
+width:41px;
+height:41px;
+border:1px solid var(--gold);
+border-radius:50%;
+position:absolute;
 }
 
-.nav-emblem::before {
-    content: "";
-
-    width: 41px;
-    height: 41px;
-
-    border: 1px solid var(--gold);
-
-    border-radius: 50%;
-
-    position: absolute;
+.nav-crescent{
+width:21px;
+height:21px;
+border-radius:50%;
+background:var(--green);
+position:relative;
+z-index:3;
 }
-
-
-/* NAV CRESCENT */
-
-.nav-crescent {
-    width: 21px;
-    height: 21px;
-
-    border-radius: 50%;
 
-    background: var(--green);
-
-    position: relative;
-
-    z-index: 3;
+.nav-crescent:after{
+content:"";
+width:19px;
+height:19px;
+border-radius:50%;
+background:white;
+position:absolute;
+left:7px;
+top:-3px;
 }
-
-.nav-crescent::after {
-    content: "";
-
-    width: 19px;
-    height: 19px;
 
-    border-radius: 50%;
-
-    background: white;
-
-    position: absolute;
-
-    left: 7px;
-    top: -3px;
+.nav-brand{
+display:flex;
+flex-direction:column;
 }
-
 
-/* NAV BRAND TEXT */
-
-.nav-brand {
-    display: flex;
-    flex-direction: column;
+.nav-brand-name{
+font-family:Georgia,serif;
+font-size:22px;
+font-weight:600;
+color:var(--green);
 }
-
-.nav-brand-name {
-    font-family: Georgia, serif;
-
-    font-size: 22px;
-
-    font-weight: 600;
 
-    color: var(--green);
-
-    letter-spacing: .3px;
+.nav-brand-tagline{
+font-size:6px;
+letter-spacing:2px;
+color:var(--gold);
+margin-top:3px;
 }
-
-.nav-brand-tagline {
-    font-size: 6px;
-
-    letter-spacing: 2px;
-
-    color: var(--gold);
 
-    margin-top: 3px;
+.nav-links{
+display:flex;
+gap:34px;
 }
 
-
-/* NAV LINKS */
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 34px;
+.nav-links a{
+text-decoration:none;
+color:var(--text);
+font-size:13px;
 }
-
-.nav-links a {
-    text-decoration: none;
-
-    color: var(--text);
 
-    font-size: 13px;
-
-    transition: .25s;
+.nav-links a:hover{
+color:var(--gold);
 }
 
-.nav-links a:hover {
-    color: var(--gold);
+.nav-actions{
+display:flex;
+gap:10px;
 }
-
 
-/* NAV BUTTONS */
-
-.nav-actions {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.login-btn,
+.cart-btn{
+padding:11px 19px;
+border-radius:30px;
+cursor:pointer;
 }
-
-.login-btn {
-    padding: 11px 19px;
 
-    border: 1px solid var(--green);
-
-    border-radius: 30px;
-
-    background: white;
-
-    color: var(--green);
-
-    cursor: pointer;
-
-    transition: .25s;
+.login-btn{
+border:1px solid var(--green);
+background:white;
+color:var(--green);
 }
 
-.login-btn:hover {
-    background: var(--green);
-    color: white;
+.cart-btn{
+border:none;
+background:var(--green);
+color:white;
 }
-
-.cart-btn {
-    padding: 12px 18px;
-
-    border: none;
-
-    border-radius: 30px;
 
-    background: var(--green);
 
-    color: white;
+/* =========================
+HERO
+========================= */
 
-    cursor: pointer;
-
-    transition: .25s;
+.hero{
+min-height:650px;
+display:flex;
+align-items:center;
+padding:70px 7%;
+background:
+radial-gradient(
+circle at 85% 20%,
+rgba(184,148,69,.13),
+transparent 28%
+),
+linear-gradient(135deg,#fff,#F4F8F6);
 }
 
-.cart-btn:hover {
-    background: var(--dark-green);
-    transform: translateY(-2px);
+.hero-content{
+width:55%;
 }
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    min-height: 650px;
 
-    display: flex;
-    align-items: center;
-
-    padding: 70px 7%;
-
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(184,148,69,.13),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #F4F8F6
-        );
+.eyebrow{
+color:var(--gold);
+font-size:12px;
+letter-spacing:4px;
+font-weight:bold;
+margin-bottom:20px;
 }
 
-.hero-content {
-    width: 55%;
+.hero h1{
+font-family:Georgia,serif;
+font-size:clamp(48px,6vw,82px);
+line-height:1.02;
+color:var(--green);
+margin-bottom:25px;
 }
-
-.eyebrow {
-    color: var(--gold);
-
-    font-size: 12px;
 
-    letter-spacing: 4px;
-
-    font-weight: bold;
-
-    margin-bottom: 20px;
+.hero h1 span{
+color:var(--gold);
 }
-
-.hero h1 {
-    font-family: Georgia, serif;
-
-    font-size: clamp(48px, 6vw, 82px);
 
-    line-height: 1.02;
-
-    color: var(--green);
-
-    margin-bottom: 25px;
+.hero-description{
+max-width:540px;
+color:var(--muted);
+font-size:16px;
+line-height:1.9;
+margin-bottom:32px;
 }
 
-.hero h1 span {
-    color: var(--gold);
+.hero-buttons{
+display:flex;
+gap:12px;
 }
-
-.hero-description {
-    max-width: 540px;
-
-    color: var(--muted);
 
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    margin-bottom: 32px;
+.primary-btn,
+.secondary-btn{
+display:inline-block;
+text-decoration:none;
+padding:15px 28px;
+border-radius:30px;
 }
-
-
-/* HERO BUTTONS */
 
-.hero-buttons {
-    display: flex;
-    gap: 12px;
+.primary-btn{
+background:var(--green);
+color:white;
 }
-
-.primary-btn {
-    display: inline-block;
-
-    text-decoration: none;
-
-    background: var(--green);
-
-    color: white;
 
-    padding: 15px 28px;
+.secondary-btn{
+border:1px solid var(--green);
+color:var(--green);
+}
 
-    border-radius: 30px;
 
-    font-weight: bold;
+/* HERO LOGO */
 
-    transition: .25s;
+.hero-logo-area{
+width:45%;
+display:flex;
+align-items:center;
+justify-content:center;
 }
-
-.primary-btn:hover {
-    background: var(--dark-green);
 
-    transform: translateY(-3px);
+.hero-emblem{
+width:370px;
+height:370px;
+border-radius:50%;
+background:white;
+border:1.5px solid var(--green);
+box-shadow:
+0 0 0 9px white,
+0 0 0 10px var(--gold),
+0 30px 80px rgba(23,79,64,.10);
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
-
-.secondary-btn {
-    display: inline-block;
-
-    text-decoration: none;
-
-    color: var(--green);
-
-    border: 1px solid var(--green);
-
-    padding: 14px 27px;
-
-    border-radius: 30px;
 
-    transition: .25s;
+.hero-emblem:before{
+content:"";
+position:absolute;
+width:325px;
+height:325px;
+border-radius:50%;
+border:1px solid var(--gold);
 }
 
-.secondary-btn:hover {
-    background: var(--green);
-
-    color: white;
+.hero-crescent{
+width:90px;
+height:90px;
+border-radius:50%;
+background:var(--green);
+position:relative;
+z-index:5;
 }
-
-
-/* =====================================================
-   LARGE HERO LOGO
-===================================================== */
-
-.hero-logo-area {
-    width: 45%;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+.hero-crescent:after{
+content:"";
+position:absolute;
+width:80px;
+height:80px;
+border-radius:50%;
+background:white;
+left:27px;
+top:-12px;
 }
-
-
-/* BIG CIRCLE */
-
-.hero-emblem {
-    width: 370px;
-    height: 370px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    border: 1.5px solid var(--green);
-
-    box-shadow:
-        0 0 0 9px white,
-        0 0 0 10px var(--gold),
-        0 30px 80px rgba(23,79,64,.10);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
 
-    justify-content: center;
-
-    position: relative;
+.hero-brand{
+position:absolute;
+bottom:86px;
+text-align:center;
+z-index:20;
 }
-
-.hero-emblem::before {
-    content: "";
-
-    position: absolute;
-
-    width: 325px;
-    height: 325px;
 
-    border-radius: 50%;
-
-    border: 1px solid var(--gold);
+.hero-brand-name{
+font-family:Georgia,serif;
+font-size:28px;
+color:var(--green);
 }
-
-
-/* GEOMETRIC STAR */
-
-.hero-star {
-    position: absolute;
 
-    width: 105px;
-    height: 105px;
-
-    transform: rotate(45deg);
-
-    border: 2px solid var(--green);
-
-    opacity: .95;
+.hero-gold-line{
+width:170px;
+height:1px;
+background:var(--gold);
+margin:8px auto;
 }
-
-.hero-star::before {
-    content: "";
 
-    position: absolute;
-
-    width: 75px;
-    height: 75px;
-
-    left: 13px;
-    top: 13px;
-
-    border: 1px solid var(--gold);
+.hero-tagline{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold);
 }
-
 
-/* LARGE CRESCENT */
 
-.hero-crescent {
-    width: 90px;
-    height: 90px;
+/* =========================
+SECTIONS
+========================= */
 
-    border-radius: 50%;
-
-    background: var(--green);
-
-    position: relative;
-
-    z-index: 5;
+section{
+padding:95px 7%;
 }
-
-.hero-crescent::after {
-    content: "";
-
-    position: absolute;
-
-    width: 80px;
-    height: 80px;
-
-    border-radius: 50%;
-
-    background: white;
 
-    left: 27px;
-    top: -12px;
+.section-heading{
+text-align:center;
+margin-bottom:48px;
 }
 
-
-/* GOLD STAR */
-
-.hero-mini-star {
-    position: absolute;
-
-    top: 103px;
-    right: 104px;
-
-    color: var(--gold);
-
-    font-size: 27px;
-
-    z-index: 10;
+.section-heading small{
+color:var(--gold);
+font-size:11px;
+letter-spacing:3px;
+font-weight:bold;
 }
-
-
-/* HERO BRAND */
 
-.hero-brand {
-    position: absolute;
-
-    bottom: 86px;
-
-    text-align: center;
-
-    z-index: 20;
+.section-heading h2{
+font-family:Georgia,serif;
+font-size:43px;
+color:var(--green);
+margin-top:10px;
 }
-
-.hero-brand-name {
-    font-family: Georgia, serif;
 
-    font-size: 28px;
-
-    color: var(--green);
-
-    font-weight: 600;
+.section-heading p{
+color:var(--muted);
+margin-top:10px;
 }
 
-.hero-gold-line {
-    width: 170px;
 
-    height: 1px;
+/* =========================
+PRODUCTS
+========================= */
 
-    background: var(--gold);
-
-    margin: 8px auto;
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px;
 }
-
-.hero-tagline {
-    font-size: 7px;
 
-    letter-spacing: 3px;
-
-    color: var(--gold);
-
-    font-weight: bold;
+.product{
+background:white;
+border:1px solid var(--border);
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
 }
-
-
-/* =====================================================
-   SECTION
-===================================================== */
 
-section {
-    padding: 95px 7%;
+.product:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(23,79,64,.10);
 }
 
-.section-heading {
-    text-align: center;
-
-    margin-bottom: 48px;
+.product-image{
+height:250px;
+background:linear-gradient(135deg,#F5F8F6,#EEF4F1);
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
 }
-
-.section-heading small {
-    color: var(--gold);
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
 
-    font-weight: bold;
-
-    text-transform: uppercase;
+.product-image img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
-
-.section-heading h2 {
-    font-family: Georgia, serif;
-
-    font-size: 43px;
-
-    color: var(--green);
 
-    margin-top: 10px;
+.product-info{
+padding:21px;
 }
 
-.section-heading p {
-    color: var(--muted);
-
-    margin-top: 10px;
+.product-info h3{
+font-family:Georgia,serif;
+color:var(--green);
+font-size:20px;
+margin-bottom:8px;
 }
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
-.products {
-    display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 22px;
+.product-info p{
+color:var(--muted);
+font-size:13px;
+line-height:1.6;
+margin-bottom:15px;
 }
-
-.product {
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
 
-    overflow: hidden;
-
-    transition: .3s;
+.price{
+color:var(--green);
+font-size:18px;
+font-weight:bold;
 }
-
-.product:hover {
-    transform: translateY(-8px);
 
-    box-shadow:
-        0 20px 45px rgba(23,79,64,.10);
+.buy{
+float:right;
+border:none;
+background:var(--green);
+color:white;
+padding:9px 15px;
+border-radius:20px;
+cursor:pointer;
 }
-
-
-/* PRODUCT IMAGE */
 
-.product-image {
-    height: 250px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #F5F8F6,
-            #EEF4F1
-        );
+/* =========================
+PRODUCT PAGE
+========================= */
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #9BA9A3;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
+.product-page{
+display:none;
+position:fixed;
+inset:0;
+background:white;
+z-index:3000;
+overflow-y:auto;
 }
 
-.product-info {
-    padding: 21px;
+.product-page-inner{
+max-width:1100px;
+margin:auto;
+padding:30px;
 }
-
-.product-info h3 {
-    font-family: Georgia, serif;
-
-    color: var(--green);
-
-    font-size: 20px;
 
-    margin-bottom: 8px;
+.back-btn{
+border:none;
+background:var(--light-green);
+padding:11px 18px;
+border-radius:20px;
+cursor:pointer;
+margin-bottom:25px;
 }
 
-.product-info p {
-    color: var(--muted);
-
-    font-size: 13px;
-
-    line-height: 1.6;
-
-    margin-bottom: 15px;
+.product-detail{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
 }
-
-.price {
-    color: var(--green);
 
-    font-size: 18px;
-
-    font-weight: bold;
+.detail-image{
+width:100%;
+height:500px;
+object-fit:contain;
+background:var(--light-green);
+border-radius:20px;
 }
-
-.buy {
-    float: right;
-
-    border: none;
-
-    background: var(--green);
 
-    color: white;
-
-    padding: 9px 15px;
-
-    border-radius: 20px;
-
-    cursor: pointer;
-
-    transition: .2s;
+.detail-title{
+font-family:Georgia,serif;
+font-size:40px;
+color:var(--green);
+margin-bottom:15px;
 }
 
-.buy:hover {
-    background: var(--gold);
+.detail-price{
+font-size:28px;
+font-weight:bold;
+color:var(--green);
+margin-bottom:20px;
 }
 
-
-/* =====================================================
-   WHY US
-===================================================== */
-
-.why {
-    background: var(--cream);
+.detail-description{
+color:var(--muted);
+line-height:1.8;
+margin-bottom:30px;
 }
-
-.features {
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
 
-    gap: 25px;
+.buy-now{
+width:100%;
+padding:16px;
+border:none;
+background:var(--green);
+color:white;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.feature {
-    background: white;
 
-    padding: 38px 27px;
+/* =========================
+WHY
+========================= */
 
-    text-align: center;
-
-    border: 1px solid var(--border);
-
-    border-radius: 20px;
-
-    transition: .25s;
+.why{
+background:var(--cream);
 }
-
-.feature:hover {
-    transform: translateY(-5px);
 
-    border-color: var(--soft-gold);
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
-.feature-icon {
-    font-size: 30px;
-
-    margin-bottom: 17px;
+.feature{
+background:white;
+padding:38px 27px;
+text-align:center;
+border:1px solid var(--border);
+border-radius:20px;
 }
-
-.feature h3 {
-    font-family: Georgia, serif;
 
-    color: var(--green);
-
-    margin-bottom: 10px;
+.feature-icon{
+font-size:30px;
+margin-bottom:17px;
 }
-
-.feature p {
-    color: var(--muted);
 
-    font-size: 14px;
-
-    line-height: 1.7;
+.feature h3{
+font-family:Georgia,serif;
+color:var(--green);
+margin-bottom:10px;
 }
 
+.feature p{
+color:var(--muted);
+font-size:14px;
+line-height:1.7;
+}
 
-/* =====================================================
-   BRAND STATEMENT
-===================================================== */
 
-.statement {
-    text-align: center;
+/* =========================
+STATEMENT
+========================= */
 
-    background: white;
+.statement{
+text-align:center;
 }
 
-.statement h2 {
-    font-family: Georgia, serif;
-
-    color: var(--green);
+.statement h2{
+font-family:Georgia,serif;
+color:var(--green);
+font-size:40px;
+max-width:800px;
+margin:auto;
+}
 
-    font-size: 40px;
+.statement span{
+color:var(--gold);
+}
 
-    max-width: 800px;
 
-    margin: auto;
+/* =========================
+NEWSLETTER
+========================= */
 
-    line-height: 1.3;
+.newsletter{
+text-align:center;
+background:var(--green);
+color:white;
+padding:80px 20px;
 }
 
-.statement span {
-    color: var(--gold);
+.newsletter h2{
+font-family:Georgia,serif;
+font-size:40px;
+margin-bottom:12px;
 }
 
+.newsletter p{
+color:#C9D8D2;
+margin-bottom:27px;
+}
 
-/* =====================================================
-   NEWSLETTER
-===================================================== */
 
-.newsletter {
-    text-align: center;
+/* =========================
+FOOTER
+========================= */
 
-    background: var(--green);
+footer{
+background:var(--dark-green);
+color:#D8E1DD;
+padding:50px 7%;
+display:flex;
+justify-content:space-between;
+gap:35px;
+}
 
-    color: white;
+footer h3{
+font-family:Georgia,serif;
+color:white;
+margin-bottom:12px;
+}
 
-    padding: 80px 20px;
+footer p{
+font-size:13px;
+color:#AEBDB7;
+line-height:1.8;
 }
 
-.newsletter h2 {
-    font-family: Georgia, serif;
 
-    font-size: 40px;
+/* =========================
+MESSAGE BUTTON
+========================= */
 
-    margin-bottom: 12px;
+.message-button{
+position:fixed;
+right:25px;
+bottom:25px;
+width:64px;
+height:64px;
+border:none;
+border-radius:50%;
+background:var(--green);
+color:white;
+font-size:27px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+z-index:5000;
 }
 
-.newsletter p {
-    color: #C9D8D2;
-
-    margin-bottom: 27px;
+.message-button:hover{
+background:var(--dark-green);
+transform:translateY(-3px);
 }
-
-.newsletter button {
-    border: none;
 
-    background: var(--gold);
 
-    color: white;
+/* =========================
+MESSAGE PANEL
+========================= */
 
-    padding: 14px 30px;
+.message-panel{
+position:fixed;
+right:25px;
+bottom:105px;
+width:370px;
+height:540px;
+background:white;
+border-radius:20px;
+box-shadow:0 15px 50px rgba(0,0,0,.25);
+display:none;
+flex-direction:column;
+overflow:hidden;
+z-index:4999;
+}
 
-    border-radius: 25px;
+.message-header{
+background:var(--green);
+color:white;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    cursor: pointer;
+.seller-title{
+font-weight:bold;
+}
 
-    font-weight: bold;
+.seller-status{
+font-size:11px;
+opacity:.8;
+margin-top:4px;
 }
 
+.close-chat{
+border:none;
+background:transparent;
+color:white;
+font-size:24px;
+cursor:pointer;
+}
 
-/* =====================================================
-   FOOTER
-===================================================== */
+.chat-body{
+flex:1;
+padding:15px;
+background:var(--light-green);
+overflow-y:auto;
+}
 
-footer {
-    background: var(--dark-green);
+.welcome-message{
+background:white;
+padding:13px;
+border-radius:14px;
+font-size:13px;
+line-height:1.6;
+margin-bottom:15px;
+}
 
-    color: #D8E1DD;
+.chat-row{
+display:flex;
+margin-bottom:10px;
+}
 
-    padding: 50px 7%;
+.chat-row.customer{
+justify-content:flex-end;
+}
 
-    display: flex;
+.chat-bubble{
+max-width:75%;
+padding:10px 14px;
+border-radius:15px;
+font-size:13px;
+}
 
-    justify-content: space-between;
+.seller-bubble{
+background:white;
+}
 
-    gap: 35px;
+.customer-bubble{
+background:var(--green);
+color:white;
 }
 
-footer h3 {
-    font-family: Georgia, serif;
+.chat-input-area{
+padding:12px;
+border-top:1px solid var(--border);
+display:flex;
+gap:8px;
+}
 
-    color: white;
+.chat-input{
+flex:1;
+border:1px solid var(--border);
+border-radius:22px;
+padding:11px 14px;
+outline:none;
+}
 
-    margin-bottom: 12px;
+.send-button{
+width:44px;
+height:44px;
+border:none;
+border-radius:50%;
+background:var(--green);
+color:white;
+cursor:pointer;
+font-size:17px;
 }
 
-footer p {
-    font-size: 13px;
 
-    color: #AEBDB7;
+/* =========================
+CONTACT
+========================= */
 
-    line-height: 1.8;
+.contact-number{
+color:var(--green);
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
 }
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
-@media(max-width:1000px) {
 
-    .nav-links {
-        display: none;
-    }
+/* =========================
+MOBILE
+========================= */
 
-    .hero {
-        flex-direction: column;
+@media(max-width:1000px){
 
-        text-align: center;
+.nav-links{
+display:none;
+}
 
-        gap: 70px;
-    }
+.hero{
+flex-direction:column;
+text-align:center;
+gap:60px;
+}
 
-    .hero-content,
-    .hero-logo-area {
-        width: 100%;
-    }
+.hero-content,
+.hero-logo-area{
+width:100%;
+}
 
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
+.hero-description{
+margin-left:auto;
+margin-right:auto;
+}
 
-    .hero-buttons {
-        justify-content: center;
-    }
+.hero-buttons{
+justify-content:center;
+}
 
-    .products {
-        grid-template-columns: repeat(2,1fr);
-    }
+.products{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .features {
-        grid-template-columns: 1fr;
-    }
+.features{
+grid-template-columns:1fr;
 }
 
+}
 
-@media(max-width:600px) {
+@media(max-width:600px){
 
-    nav {
-        height: 75px;
+nav{
+height:75px;
+}
 
-        padding: 0 5%;
-    }
+.nav-brand-name{
+font-size:18px;
+}
 
-    .nav-brand-name {
-        font-size: 18px;
-    }
+.login-btn{
+display:none;
+}
 
-    .nav-brand-tagline {
-        display: none;
-    }
+.hero{
+padding:55px 5%;
+}
 
-    .login-btn {
-        display: none;
-    }
+.hero h1{
+font-size:50px;
+}
 
-    .hero {
-        padding: 60px 5%;
-    }
+.hero-emblem{
+width:290px;
+height:290px;
+}
 
-    .hero h1 {
-        font-size: 50px;
-    }
+.hero-emblem:before{
+width:252px;
+height:252px;
+}
 
-    .hero-emblem {
-        width: 290px;
-        height: 290px;
-    }
+.hero-crescent{
+width:65px;
+height:65px;
+}
 
-    .hero-emblem::before {
-        width: 252px;
-        height: 252px;
-    }
+.hero-crescent:after{
+width:58px;
+height:58px;
+}
 
-    .hero-crescent {
-        width: 65px;
-        height: 65px;
-    }
+.hero-brand{
+bottom:61px;
+}
 
-    .hero-crescent::after {
-        width: 58px;
-        height: 58px;
-    }
+.hero-brand-name{
+font-size:22px;
+}
 
-    .hero-star {
-        width: 80px;
-        height: 80px;
-    }
+section{
+padding:70px 5%;
+}
 
-    .hero-brand {
-        bottom: 61px;
-    }
+.products{
+grid-template-columns:1fr;
+}
 
-    .hero-brand-name {
-        font-size: 22px;
-    }
+.product-detail{
+grid-template-columns:1fr;
+}
 
-    .hero-tagline {
-        font-size: 5px;
-    }
+.detail-image{
+height:350px;
+}
 
-    section {
-        padding: 70px 5%;
-    }
+.message-panel{
+right:10px;
+bottom:95px;
+width:calc(100% - 20px);
+height:520px;
+}
 
-    .products {
-        grid-template-columns: 1fr;
-    }
+.message-button{
+right:18px;
+bottom:18px;
+}
 
-    .section-heading h2 {
-        font-size: 34px;
-    }
+footer{
+flex-direction:column;
+}
 
-    footer {
-        flex-direction: column;
-    }
 }
 
 </style>
@@ -1012,595 +898,945 @@ footer p {
 <body>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- =========================
+NAVBAR
+========================= -->
 
 <nav>
 
-    <a href="#" class="nav-logo">
+<a href="#" class="nav-logo">
 
-        <div class="nav-emblem">
+<div class="nav-emblem">
+<div class="nav-crescent"></div>
+</div>
 
-            <div class="nav-crescent"></div>
+<div class="nav-brand">
 
-        </div>
+<div class="nav-brand-name">
+Islamic Legacy
+</div>
 
-        <div class="nav-brand">
+<div class="nav-brand-tagline">
+TIMELESS • MEANINGFUL • ELEGANT
+</div>
 
-            <div class="nav-brand-name">
-                Islamic Legacy
-            </div>
+</div>
 
-            <div class="nav-brand-tagline">
-                TIMELESS • MEANINGFUL • ELEGANT
-            </div>
-
-        </div>
-
-    </a>
+</a>
 
 
-    <div class="nav-links">
+<div class="nav-links">
 
-        <a href="#">Home</a>
+<a href="#">Home</a>
+<a href="#shop">Shop</a>
+<a href="#why">Our Story</a>
+<a href="#contact">Contact</a>
 
-        <a href="#shop">Shop</a>
-
-        <a href="#why">Our Story</a>
-
-        <a href="#contact">Contact</a>
-
-    </div>
+</div>
 
 
-    <div class="nav-actions">
+<div class="nav-actions">
 
-        <button
-            class="login-btn"
-            onclick="loginMessage()">
+<button
+class="login-btn"
+onclick="alert('Login coming soon')">
+Login
+</button>
 
-            Login
+<button
+class="cart-btn"
+onclick="openCart()">
+🛒 Cart
+<span id="cartCount">0</span>
+</button>
 
-        </button>
-
-        <button
-            class="cart-btn"
-            onclick="cartMessage()">
-
-            🛒 Cart
-            <span id="cartCount">0</span>
-
-        </button>
-
-    </div>
+</div>
 
 </nav>
 
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- =========================
+HERO
+========================= -->
 
 <header class="hero">
 
+<div class="hero-content">
 
-    <div class="hero-content">
+<div class="eyebrow">
+ISLAMIC • HAJJ • UMRAH • CELEBRATIONS
+</div>
 
-        <div class="eyebrow">
-            ISLAMIC • HAJJ • UMRAH • CELEBRATIONS
-        </div>
+<h1>
+Beautiful things<br>
+with a <span>legacy.</span>
+</h1>
 
+<p class="hero-description">
+Discover thoughtfully selected Islamic and
+celebration essentials designed to make
+every meaningful moment more beautiful.
+</p>
 
-        <h1>
+<div class="hero-buttons">
 
-            Beautiful things<br>
+<a
+href="#shop"
+class="primary-btn">
+Shop Collection
+</a>
 
-            with a
-            <span>legacy.</span>
+<a
+href="#why"
+class="secondary-btn">
+Our Story
+</a>
 
-        </h1>
+</div>
 
-
-        <p class="hero-description">
-
-            Discover thoughtfully selected Islamic
-            and celebration essentials designed
-            to make every meaningful moment
-            more beautiful.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="#shop"
-                class="primary-btn">
-
-                Shop Collection
-
-            </a>
+</div>
 
 
-            <a
-                href="#why"
-                class="secondary-btn">
+<div class="hero-logo-area">
 
-                Our Story
+<div class="hero-emblem">
 
-            </a>
+<div class="hero-crescent"></div>
 
-        </div>
+<div class="hero-brand">
 
-    </div>
+<div class="hero-brand-name">
+Islamic Legacy
+</div>
 
+<div class="hero-gold-line"></div>
 
+<div class="hero-tagline">
+TIMELESS • MEANINGFUL • ELEGANT
+</div>
 
-    <!-- LARGE BRAND LOGO -->
+</div>
 
-    <div class="hero-logo-area">
+</div>
 
-        <div class="hero-emblem">
-
-            <div class="hero-star"></div>
-
-            <div class="hero-crescent"></div>
-
-            <div class="hero-mini-star">
-                ✦
-            </div>
-
-
-            <div class="hero-brand">
-
-                <div class="hero-brand-name">
-                    Islamic Legacy
-                </div>
-
-                <div class="hero-gold-line"></div>
-
-                <div class="hero-tagline">
-                    TIMELESS • MEANINGFUL • ELEGANT
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </header>
 
 
-
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
+<!-- =========================
+PRODUCTS
+========================= -->
 
 <section id="shop">
 
+<div class="section-heading">
 
-    <div class="section-heading">
+<small>Our Collection</small>
 
-        <small>
-            Our Collection
-        </small>
+<h2>Featured Products</h2>
 
-        <h2>
-            Featured Products
-        </h2>
+<p>
+Carefully selected essentials for meaningful moments.
+</p>
 
-        <p>
-            Carefully selected essentials
-            for meaningful moments.
-        </p>
-
-    </div>
+</div>
 
 
-
-    <div class="products">
-
-
-        <div class="product">
-
-            <div class="product-image">
-                HAJJ BANNER
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Hajj Banner
-                </h3>
-
-                <p>
-                    Elegant decoration for
-                    welcoming Hajj pilgrims.
-                </p>
-
-                <span class="price">
-                    Rs. 599
-                </span>
-
-                <button
-                    class="buy"
-                    onclick="addToCart()">
-
-                    Add
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="product">
-
-            <div class="product-image">
-                ISLAMIC BUNTING
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Islamic Bunting
-                </h3>
-
-                <p>
-                    Beautiful decorative bunting
-                    for special occasions.
-                </p>
-
-                <span class="price">
-                    Rs. 399
-                </span>
-
-                <button
-                    class="buy"
-                    onclick="addToCart()">
-
-                    Add
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="product">
-
-            <div class="product-image">
-                CELEBRATION BALLOONS
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Celebration Balloons
-                </h3>
-
-                <p>
-                    Elegant balloons for
-                    memorable celebrations.
-                </p>
-
-                <span class="price">
-                    Rs. 499
-                </span>
-
-                <button
-                    class="buy"
-                    onclick="addToCart()">
-
-                    Add
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="product">
-
-            <div class="product-image">
-                PREMIUM SOAP
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Premium Soap
-                </h3>
-
-                <p>
-                    A simple everyday essential
-                    from Islamic Legacy.
-                </p>
-
-                <span class="price">
-                    Rs. 299
-                </span>
-
-                <button
-                    class="buy"
-                    onclick="addToCart()">
-
-                    Add
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
+<div
+class="products"
+id="productGrid">
+</div>
 
 </section>
 
 
-
-<!-- =====================================================
-     BRAND STATEMENT
-===================================================== -->
+<!-- =========================
+STATEMENT
+========================= -->
 
 <section class="statement">
 
-    <h2>
-
-        More than products.
-        <span>Meaningful moments.</span>
-
-    </h2>
+<h2>
+More than products.
+<span>Meaningful moments.</span>
+</h2>
 
 </section>
 
 
-
-<!-- =====================================================
-     WHY US
-===================================================== -->
+<!-- =========================
+WHY
+========================= -->
 
 <section
-    class="why"
-    id="why">
+class="why"
+id="why">
+
+<div class="section-heading">
+
+<small>Why Islamic Legacy</small>
+
+<h2>Made for meaningful moments.</h2>
+
+<p>
+Simple. Elegant. Thoughtfully selected.
+</p>
+
+</div>
 
 
-    <div class="section-heading">
+<div class="features">
 
-        <small>
-            Why Islamic Legacy
-        </small>
+<div class="feature">
 
-        <h2>
-            Made for meaningful moments.
-        </h2>
+<div class="feature-icon">🕋</div>
 
-        <p>
-            Simple. Elegant. Thoughtfully selected.
-        </p>
+<h3>Meaningful</h3>
 
-    </div>
+<p>
+Products selected for important
+Islamic moments and celebrations.
+</p>
 
+</div>
 
 
-    <div class="features">
+<div class="feature">
+
+<div class="feature-icon">✦</div>
+
+<h3>Premium Feel</h3>
+
+<p>
+A refined shopping experience
+from browsing to ordering.
+</p>
+
+</div>
 
 
-        <div class="feature">
+<div class="feature">
 
-            <div class="feature-icon">
-                🕋
-            </div>
+<div class="feature-icon">📦</div>
 
-            <h3>
-                Meaningful
-            </h3>
+<h3>Easy Ordering</h3>
 
-            <p>
-                Products selected for important
-                Islamic moments and celebrations.
-            </p>
+<p>
+Simple ordering designed to make
+shopping quick and convenient.
+</p>
 
-        </div>
+</div>
 
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ✦
-            </div>
-
-            <h3>
-                Premium Feel
-            </h3>
-
-            <p>
-                A refined shopping experience
-                from browsing to ordering.
-            </p>
-
-        </div>
-
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                📦
-            </div>
-
-            <h3>
-                Easy Ordering
-            </h3>
-
-            <p>
-                Simple ordering designed to make
-                shopping quick and convenient.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =====================================================
-     NEWSLETTER
-===================================================== -->
+<!-- =========================
+NEWSLETTER
+========================= -->
 
 <section class="newsletter">
 
-    <h2>
-        Join the Legacy
-    </h2>
+<h2>Join the Legacy</h2>
 
-    <p>
-        Discover new products and special
-        offers from Islamic Legacy.
-    </p>
-
-    <button onclick="subscribeMessage()">
-
-        Stay Updated
-
-    </button>
+<p>
+Discover new products and special offers.
+</p>
 
 </section>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer id="contact">
 
+<div>
 
-    <div>
+<h3>Islamic Legacy</h3>
 
-        <h3>
-            Islamic Legacy
-        </h3>
+<p>
+Premium Islamic and celebration essentials.
+</p>
 
-        <p>
-            Premium Islamic and celebration
-            essentials.
-        </p>
-
-    </div>
+</div>
 
 
-    <div>
+<div>
 
-        <h3>
-            Quick Links
-        </h3>
+<h3>Customer Care</h3>
 
-        <p>
-            Home • Shop • Our Story • Contact
-        </p>
+<p>
+Orders • Delivery • Returns
+</p>
 
-    </div>
+</div>
 
 
-    <div>
+<div>
 
-        <h3>
-            Customer Care
-        </h3>
+<h3>Contact Us</h3>
 
-        <p>
-            Orders • Delivery • Returns
-        </p>
+<p>
+Phone
+</p>
 
-    </div>
+<div class="contact-number">
+03030403968
+</div>
+
+</div>
 
 </footer>
 
 
+<!-- =========================
+PRODUCT DETAIL PAGE
+========================= -->
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<div
+id="productPage"
+class="product-page">
+
+<div class="product-page-inner">
+
+<button
+class="back-btn"
+onclick="closeProduct()">
+← Back
+</button>
+
+<div
+id="productDetail"
+class="product-detail">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+MESSAGE BUTTON
+========================= -->
+
+<button
+class="message-button"
+onclick="toggleMessage()">
+💬
+</button>
+
+
+<!-- =========================
+MESSAGE PANEL
+========================= -->
+
+<div
+id="messagePanel"
+class="message-panel">
+
+<div class="message-header">
+
+<div>
+
+<div class="seller-title">
+Islamic Legacy
+</div>
+
+<div class="seller-status">
+Seller • Message Seller
+</div>
+
+</div>
+
+<button
+class="close-chat"
+onclick="toggleMessage()">
+×
+</button>
+
+</div>
+
+
+<div
+id="chatBody"
+class="chat-body">
+
+<div class="welcome-message">
+
+<strong>Islamic Legacy</strong>
+
+<br>
+
+Assalam o Alaikum! 👋
+
+<br>
+
+How can we help you?
+
+</div>
+
+</div>
+
+
+<div class="chat-input-area">
+
+<input
+id="messageInput"
+class="chat-input"
+placeholder="Write a message..."
+onkeydown="handleEnter(event)"
+>
+
+<button
+class="send-button"
+onclick="sendMessage()">
+➤
+</button>
+
+</div>
+
+</div>
+
 
 <script>
 
-let cartCount = 0;
+/* =====================================================
+   GOOGLE APPS SCRIPT
+===================================================== */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxz4gz34lmJ1CHj0FuaMwiAPjosmLsGdWX5hZmmDhgTCYzVV4Li5HQuqMyn1tSN3xnjhg/exec";
 
 
-/* ADD TO CART */
+/* =====================================================
+   PRODUCTS
+===================================================== */
 
-function addToCart() {
+const products = [
 
-    cartCount++;
+{
+id:1,
+name:"Hajj Banner",
+price:599,
+description:
+"Elegant decoration for welcoming Hajj pilgrims.",
+image:""
+},
 
-    document.getElementById("cartCount").textContent =
-        cartCount;
+{
+id:2,
+name:"Islamic Bunting",
+price:399,
+description:
+"Beautiful decorative bunting for special occasions.",
+image:""
+},
 
-    alert("Product added to cart!");
+{
+id:3,
+name:"Celebration Balloons",
+price:499,
+description:
+"Elegant balloons for memorable celebrations.",
+image:""
+},
+
+{
+id:4,
+name:"Premium Soap",
+price:299,
+description:
+"A simple everyday essential from Islamic Legacy.",
+image:""
+}
+
+];
+
+
+let cart = [];
+
+let customerId =
+localStorage.getItem("customerId");
+
+
+if(!customerId){
+
+customerId =
+"customer_" +
+Date.now() +
+"_" +
+Math.random()
+.toString(36)
+.substring(2,8);
+
+localStorage.setItem(
+"customerId",
+customerId
+);
 
 }
 
 
-/* CART */
+/* =====================================================
+   PRODUCT RENDER
+===================================================== */
 
-function cartMessage() {
+function renderProducts(){
 
-    alert(
-        "Your cart currently has " +
-        cartCount +
-        " item(s)."
-    );
+const grid =
+document.getElementById("productGrid");
+
+grid.innerHTML="";
+
+
+products.forEach(product=>{
+
+const card =
+document.createElement("div");
+
+card.className="product";
+
+
+let imageHTML="";
+
+if(product.image){
+
+imageHTML =
+`
+<img
+src="${product.image}"
+alt="${product.name}">
+`;
+
+}else{
+
+imageHTML =
+`
+<div style="
+color:#9BA9A3;
+font-size:12px;
+letter-spacing:1px;">
+PRODUCT IMAGE
+</div>
+`;
 
 }
 
 
-/* LOGIN */
+card.innerHTML=`
 
-function loginMessage() {
+<div class="product-image">
 
-    alert(
-        "Customer Login will be connected in the next step."
-    );
+${imageHTML}
+
+</div>
+
+<div class="product-info">
+
+<h3>
+${product.name}
+</h3>
+
+<p>
+${product.description}
+</p>
+
+<span class="price">
+Rs. ${product.price}
+</span>
+
+<button
+class="buy"
+onclick="addToCart(${product.id});
+event.stopPropagation();">
+
+Add
+
+</button>
+
+</div>
+
+`;
+
+
+card.onclick =
+function(){
+
+openProduct(product.id);
+
+};
+
+
+grid.appendChild(card);
+
+});
 
 }
 
 
-/* NEWSLETTER */
+/* =====================================================
+   PRODUCT DETAIL
+===================================================== */
 
-function subscribeMessage() {
+function openProduct(id){
 
-    alert(
-        "Newsletter system will be connected later."
-    );
+const product =
+products.find(
+p=>p.id===id
+);
+
+if(!product)return;
+
+
+const detail =
+document.getElementById(
+"productDetail"
+);
+
+
+detail.innerHTML=`
+
+<div>
+
+<div class="detail-image">
+
+${
+product.image
+?
+`<img
+class="detail-image"
+src="${product.image}"
+alt="${product.name}">`
+:
+`<div style="
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#9BA9A3;">
+PRODUCT IMAGE
+</div>`
+}
+
+</div>
+
+</div>
+
+
+<div>
+
+<h1 class="detail-title">
+${product.name}
+</h1>
+
+<div class="detail-price">
+Rs. ${product.price}
+</div>
+
+<p class="detail-description">
+${product.description}
+</p>
+
+<button
+class="buy-now"
+onclick="addToCart(${product.id})">
+
+Add to Cart
+
+</button>
+
+<br><br>
+
+<button
+class="buy-now"
+onclick="buyNow(${product.id})">
+
+Buy Now
+
+</button>
+
+</div>
+
+`;
+
+
+document
+.getElementById("productPage")
+.style.display="block";
+
+document.body.style.overflow="hidden";
 
 }
+
+
+function closeProduct(){
+
+document
+.getElementById("productPage")
+.style.display="none";
+
+document.body.style.overflow="";
+
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+function addToCart(id){
+
+const product =
+products.find(
+p=>p.id===id
+);
+
+if(!product)return;
+
+cart.push(product);
+
+document
+.getElementById("cartCount")
+.textContent =
+cart.length;
+
+alert(
+product.name +
+" added to cart."
+);
+
+}
+
+
+function openCart(){
+
+alert(
+"Cart has " +
+cart.length +
+" item(s)."
+);
+
+}
+
+
+function buyNow(id){
+
+addToCart(id);
+
+alert(
+"Buy Now order system will open next."
+);
+
+}
+
+
+/* =====================================================
+   MESSAGE PANEL
+===================================================== */
+
+function toggleMessage(){
+
+const panel =
+document.getElementById(
+"messagePanel"
+);
+
+
+if(
+panel.style.display==="flex"
+){
+
+panel.style.display="none";
+
+}else{
+
+panel.style.display="flex";
+
+document
+.getElementById(
+"messageInput"
+)
+.focus();
+
+}
+
+}
+
+
+/* =====================================================
+   SEND MESSAGE
+===================================================== */
+
+async function sendMessage(){
+
+const input =
+document.getElementById(
+"messageInput"
+);
+
+const text =
+input.value.trim();
+
+
+if(!text)return;
+
+
+addChatMessage(
+text,
+"customer"
+);
+
+input.value="";
+
+
+/*
+Send message to Google Apps Script.
+*/
+
+try{
+
+await fetch(API_URL,{
+
+method:"POST",
+
+mode:"no-cors",
+
+headers:{
+"Content-Type":
+"application/x-www-form-urlencoded"
+},
+
+body:new URLSearchParams({
+
+action:"message",
+
+customerId:
+customerId,
+
+name:
+"Customer",
+
+phone:
+"Not provided",
+
+message:
+text,
+
+time:
+new Date().toISOString()
+
+})
+
+});
+
+}catch(error){
+
+console.log(
+"Message sync error:",
+error
+);
+
+}
+
+}
+
+
+/* =====================================================
+   CHAT MESSAGE
+===================================================== */
+
+function addChatMessage(
+text,
+sender
+){
+
+const body =
+document.getElementById(
+"chatBody"
+);
+
+
+const row =
+document.createElement(
+"div"
+);
+
+row.className =
+"chat-row " +
+(
+sender==="customer"
+?
+"customer"
+:
+""
+);
+
+
+const bubble =
+document.createElement(
+"div"
+);
+
+bubble.className =
+"chat-bubble " +
+(
+sender==="customer"
+?
+"customer-bubble"
+:
+"seller-bubble"
+);
+
+
+bubble.textContent=text;
+
+
+row.appendChild(
+bubble
+);
+
+body.appendChild(
+row
+);
+
+
+body.scrollTop =
+body.scrollHeight;
+
+}
+
+
+/* =====================================================
+   ENTER SEND
+===================================================== */
+
+function handleEnter(event){
+
+if(
+event.key==="Enter"
+){
+
+event.preventDefault();
+
+sendMessage();
+
+}
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+renderProducts();
 
 </script>
 
-<script>
-const API_URL = "https://script.google.com/macros/s/AKfycbxz4gz34lmJ1CHJ0fuaMwiAPjosmLsGdWX5hZmmDhgTCYzVV4Li5HQuqMyn1tSN3xnjhg/exec";
-
-fetch(API_URL)
-  .then(response => response.json())
-  .then(data => {
-    console.log("Google Sheet connected:", data);
-  })
-  .catch(error => {
-    console.error("Connection error:", error);
-  });
-</script>
 </body>
 </html>
