@@ -4,7 +4,1403 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Islamic Legacy — Seller</title>
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+Islamic Legacy Seller Center
+</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+:root{
+
+--green:#174F40;
+--dark:#0D3027;
+--gold:#B89445;
+--soft:#D6BC7A;
+--cream:#FBFAF6;
+--light:#F3F7F5;
+--text:#233C35;
+--muted:#718079;
+--border:#E7ECE9;
+
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:#F5F7F6;
+
+color:var(--text);
+
+}
+
+
+/* HEADER */
+
+header{
+
+height:75px;
+
+background:white;
+
+border-bottom:1px solid var(--border);
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 5%;
+
+position:sticky;
+
+top:0;
+
+z-index:100;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.logo{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+border:2px solid var(--gold);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:var(--green);
+
+font-size:21px;
+
+box-shadow:
+0 0 0 3px white,
+0 0 0 4px var(--green);
+
+}
+
+.brand h1{
+
+font-family:Georgia,serif;
+
+font-size:21px;
+
+color:var(--green);
+
+}
+
+.brand small{
+
+font-size:8px;
+
+letter-spacing:2px;
+
+color:var(--gold);
+
+}
+
+
+/* LOGIN */
+
+.login-screen{
+
+position:fixed;
+
+inset:0;
+
+background:
+linear-gradient(
+135deg,
+#F3F7F5,
+#fff
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:500;
+
+}
+
+.login-card{
+
+width:400px;
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:
+0 25px 70px
+rgba(23,79,64,.14);
+
+text-align:center;
+
+}
+
+.login-card h2{
+
+font-family:Georgia,serif;
+
+color:var(--green);
+
+margin:20px 0 8px;
+
+}
+
+.login-card p{
+
+color:var(--muted);
+
+font-size:13px;
+
+margin-bottom:25px;
+
+}
+
+.login-card input{
+
+width:100%;
+
+padding:14px;
+
+border:1px solid var(--border);
+
+border-radius:10px;
+
+outline:none;
+
+margin-bottom:12px;
+
+}
+
+.login-card button{
+
+width:100%;
+
+padding:14px;
+
+border:0;
+
+border-radius:10px;
+
+background:var(--green);
+
+color:white;
+
+font-weight:bold;
+
+}
+
+
+/* DASHBOARD */
+
+.dashboard{
+
+display:none;
+
+}
+
+
+/* MAIN */
+
+main{
+
+padding:35px 5%;
+
+}
+
+
+/* STATS */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:18px;
+
+margin-bottom:30px;
+
+}
+
+.stat{
+
+background:white;
+
+padding:22px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+}
+
+.stat small{
+
+color:var(--muted);
+
+font-size:12px;
+
+}
+
+.stat h2{
+
+font-family:Georgia,serif;
+
+color:var(--green);
+
+margin-top:8px;
+
+font-size:30px;
+
+}
+
+
+/* PANEL */
+
+.panel{
+
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:20px;
+
+padding:25px;
+
+margin-bottom:25px;
+
+}
+
+.panel-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.panel h2{
+
+font-family:Georgia,serif;
+
+color:var(--green);
+
+}
+
+.refresh{
+
+border:0;
+
+background:var(--green);
+
+color:white;
+
+padding:10px 16px;
+
+border-radius:20px;
+
+}
+
+
+/* ORDER */
+
+.order{
+
+border:1px solid var(--border);
+
+border-radius:16px;
+
+padding:20px;
+
+margin-bottom:15px;
+
+background:#fff;
+
+}
+
+.order-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:15px;
+
+}
+
+.order-id{
+
+font-weight:bold;
+
+color:var(--green);
+
+}
+
+.status{
+
+padding:6px 11px;
+
+border-radius:20px;
+
+font-size:11px;
+
+font-weight:bold;
+
+background:#EEF4F1;
+
+color:var(--green);
+
+}
+
+.order-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:15px;
+
+}
+
+.info{
+
+background:var(--light);
+
+padding:13px;
+
+border-radius:12px;
+
+}
+
+.info small{
+
+display:block;
+
+font-size:10px;
+
+color:var(--muted);
+
+margin-bottom:5px;
+
+}
+
+.info strong{
+
+font-size:13px;
+
+color:var(--green);
+
+}
+
+
+/* STATUS */
+
+.status-select{
+
+padding:9px;
+
+border:1px solid var(--border);
+
+border-radius:9px;
+
+margin-top:12px;
+
+}
+
+
+/* PRODUCTS */
+
+.product-form{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:12px;
+
+}
+
+.product-form input,
+.product-form textarea{
+
+padding:12px;
+
+border:1px solid var(--border);
+
+border-radius:10px;
+
+outline:none;
+
+}
+
+.product-form textarea{
+
+grid-column:1/-1;
+
+min-height:80px;
+
+}
+
+.add-product{
+
+grid-column:1/-1;
+
+padding:13px;
+
+border:0;
+
+background:var(--green);
+
+color:white;
+
+border-radius:10px;
+
+font-weight:bold;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.stats{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.order-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:550px){
+
+main{
+
+padding:25px 4%;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.product-form{
+
+grid-template-columns:1fr;
+
+}
+
+.product-form textarea{
+
+grid-column:auto;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- LOGIN -->
+
+<div
+id="loginScreen"
+class="login-screen">
+
+<div class="login-card">
+
+<div
+class="logo"
+style="margin:auto;">
+
+✦
+
+</div>
+
+<h2>
+Islamic Legacy
+</h2>
+
+<p>
+Seller Center
+</p>
+
+<input
+id="sellerKey"
+type="password"
+placeholder="Seller Key">
+
+<button
+onclick="sellerLogin()">
+
+Enter Seller Center
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div
+id="dashboard"
+class="dashboard">
+
+
+<header>
+
+<div class="brand">
+
+<div class="logo">
+✦
+</div>
+
+<div>
+
+<h1>
+Islamic Legacy
+</h1>
+
+<small>
+SELLER CENTER
+</small>
+
+</div>
+
+</div>
+
+
+<button
+class="refresh"
+onclick="loadOrders()">
+
+Refresh Orders
+
+</button>
+
+</header>
+
+
+<main>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+
+<small>
+TOTAL ORDERS
+</small>
+
+<h2 id="totalOrders">
+0
+</h2>
+
+</div>
+
+
+<div class="stat">
+
+<small>
+NEW ORDERS
+</small>
+
+<h2 id="newOrders">
+0
+</h2>
+
+</div>
+
+
+<div class="stat">
+
+<small>
+DELIVERED
+</small>
+
+<h2 id="deliveredOrders">
+0
+</h2>
+
+</div>
+
+
+<div class="stat">
+
+<small>
+TOTAL SALES
+</small>
+
+<h2 id="totalSales">
+Rs. 0
+</h2>
+
+</div>
+
+</div>
+
+
+<!-- ORDERS -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+Customer Orders
+</h2>
+
+<button
+class="refresh"
+onclick="loadOrders()">
+
+Refresh
+
+</button>
+
+</div>
+
+
+<div id="orders">
+
+Loading orders...
+
+</div>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+Add Product
+</h2>
+
+</div>
+
+
+<div class="product-form">
+
+
+<input
+id="productName"
+placeholder="Product name">
+
+
+<input
+id="productPrice"
+type="number"
+placeholder="Price">
+
+
+<input
+id="productImage"
+placeholder="Image URL">
+
+
+<textarea
+id="productDescription"
+placeholder="Product description">
+</textarea>
+
+
+<button
+class="add-product"
+onclick="addProduct()">
+
+Add Product
+
+</button>
+
+</div>
+
+</div>
+
+
+</main>
+
+</div>
+
+
+<script>
+
+
+/************************************************
+ SAME API URL
+************************************************/
+
+const API_URL =
+"https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec";
+
+
+const SELLER_KEY =
+"IL-SELLER-2026";
+
+
+/************************************************
+ LOGIN
+************************************************/
+
+function sellerLogin(){
+
+const entered =
+document.getElementById(
+"sellerKey"
+).value;
+
+
+if(
+entered === SELLER_KEY
+){
+
+document.getElementById(
+"loginScreen"
+).style.display="none";
+
+document.getElementById(
+"dashboard"
+).style.display="block";
+
+loadOrders();
+
+}else{
+
+alert(
+"Wrong seller key."
+);
+
+}
+
+}
+
+
+/************************************************
+ LOAD ORDERS
+************************************************/
+
+async function loadOrders(){
+
+try{
+
+const response =
+await fetch(
+API_URL +
+"?action=orders&key=" +
+encodeURIComponent(
+SELLER_KEY
+)
+);
+
+const data =
+await response.json();
+
+
+if(!data.success){
+
+alert(
+"Unable to load orders."
+);
+
+return;
+
+}
+
+
+renderOrders(
+data.orders
+);
+
+
+}catch(error){
+
+console.log(error);
+
+document.getElementById(
+"orders"
+).innerHTML = `
+
+<p style="
+color:#718079;
+padding:20px;">
+
+Could not connect to server.
+
+</p>
+
+`;
+
+}
+
+}
+
+
+/************************************************
+ RENDER ORDERS
+************************************************/
+
+function renderOrders(orders){
+
+const box =
+document.getElementById(
+"orders"
+);
+
+
+document.getElementById(
+"totalOrders"
+).textContent =
+orders.length;
+
+
+const newCount =
+orders.filter(
+o=>o.status==="New"
+).length;
+
+
+const deliveredCount =
+orders.filter(
+o=>o.status==="Delivered"
+).length;
+
+
+const sales =
+orders.reduce(
+(sum,o)=>
+sum + Number(o.total || 0),
+0
+);
+
+
+document.getElementById(
+"newOrders"
+).textContent =
+newCount;
+
+
+document.getElementById(
+"deliveredOrders"
+).textContent =
+deliveredCount;
+
+
+document.getElementById(
+"totalSales"
+).textContent =
+"Rs. " +
+sales.toLocaleString();
+
+
+if(!orders.length){
+
+box.innerHTML = `
+
+<div style="
+text-align:center;
+padding:50px;
+color:#718079;">
+
+No orders yet.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+box.innerHTML="";
+
+
+orders.forEach(order=>{
+
+const div =
+document.createElement(
+"div"
+);
+
+div.className="order";
+
+
+div.innerHTML = `
+
+<div class="order-top">
+
+<div>
+
+<div class="order-id">
+
+${escapeHTML(order.orderId)}
+
+</div>
+
+<small style="
+color:#718079;">
+
+${escapeHTML(order.date)}
+
+</small>
+
+</div>
+
+
+<div class="status">
+
+${escapeHTML(order.status)}
+
+</div>
+
+</div>
+
+
+<div class="order-grid">
+
+
+<div class="info">
+
+<small>
+CUSTOMER
+</small>
+
+<strong>
+${escapeHTML(order.fullName)}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+PHONE
+</small>
+
+<strong>
+${escapeHTML(order.phone)}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+PRODUCT
+</small>
+
+<strong>
+${escapeHTML(order.productName)}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+QUANTITY
+</small>
+
+<strong>
+${order.quantity}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+CITY
+</small>
+
+<strong>
+${escapeHTML(order.city)}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+TOTAL
+</small>
+
+<strong>
+Rs. ${Number(order.total).toLocaleString()}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+ADDRESS
+</small>
+
+<strong>
+${escapeHTML(order.address)}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+AREA
+</small>
+
+<strong>
+${escapeHTML(order.area)}
+</strong>
+
+</div>
+
+
+<div class="info">
+
+<small>
+DELIVERY
+</small>
+
+<strong>
+${escapeHTML(order.deliveryMethod)}
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div style="
+margin-top:15px;
+color:#718079;
+font-size:13px;">
+
+<strong>
+Notes:
+</strong>
+
+${escapeHTML(order.notes || "None")}
+
+</div>
+
+
+<select
+class="status-select"
+onchange="changeStatus(
+'${escapeHTML(order.orderId)}',
+this.value
+)">
+
+<option
+${order.status==="New"?"selected":""}>
+New
+</option>
+
+<option
+${order.status==="Processing"?"selected":""}>
+Processing
+</option>
+
+<option
+${order.status==="Shipped"?"selected":""}>
+Shipped
+</option>
+
+<option
+${order.status==="Delivered"?"selected":""}>
+Delivered
+</option>
+
+<option
+${order.status==="Cancelled"?"selected":""}>
+Cancelled
+</option>
+
+</select>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/************************************************
+ CHANGE STATUS
+************************************************/
+
+async function changeStatus(
+orderId,
+status
+){
+
+try{
+
+await fetch(
+API_URL,
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":
+"text/plain;charset=utf-8"
+},
+
+body:JSON.stringify({
+
+action:"status",
+
+key:SELLER_KEY,
+
+orderId:orderId,
+
+status:status
+
+})
+
+});
+
+loadOrders();
+
+}catch(error){
+
+alert(
+"Status update failed."
+);
+
+}
+
+}
+
+
+/************************************************
+ ADD PRODUCT
+************************************************/
+
+async function addProduct(){
+
+const name =
+document.getElementById(
+"productName"
+).value.trim();
+
+
+const price =
+document.getElementById(
+"productPrice"
+).value;
+
+
+const image =
+document.getElementById(
+"productImage"
+).value.trim();
+
+
+const description =
+document.getElementById(
+"productDescription"
+).value.trim();
+
+
+if(!name || !price){
+
+alert(
+"Product name and price are required."
+);
+
+return;
+
+}
+
+
+try{
+
+const response =
+await fetch(
+API_URL,
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":
+"text/plain;charset=utf-8"
+},
+
+body:JSON.stringify({
+
+action:"addProduct",
+
+key:SELLER_KEY,
+
+name:name,
+
+price:Number(price),
+
+image:image,
+
+description:description
+
+})
+
+});
+
+
+const data =
+await response.json();
+
+
+if(data.success){
+
+alert(
+"Product added successfully."
+);
+
+
+document.getElementById(
+"productName"
+).value="";
+
+document.getElementById(
+"productPrice"
+).value="";
+
+document.getElementById(
+"productImage"
+).value="";
+
+document.getElementById(
+"productDescription"
+).value="";
+
+}else{
+
+alert(
+"Product could not be added."
+);
+
+}
+
+}catch(error){
+
+alert(
+"Connection error."
+);
+
+}
+
+}
+
+
+/************************************************
+ ESCAPE
+************************************************/
+
+function escapeHTML(value){
+
+return String(value || "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+</script>
+
+</body>
+
+</html>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial;background:#f4f7f5;color:#203b33}
